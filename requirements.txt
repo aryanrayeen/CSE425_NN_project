@@ -1,0 +1,9 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+librosa
+soundfile
+umap-learn
+# Torch is required to run models. For GPU, install a CUDA build (see README).
+torch
