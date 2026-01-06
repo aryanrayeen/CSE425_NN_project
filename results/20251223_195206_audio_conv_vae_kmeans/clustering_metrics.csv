@@ -1,3 +1,0 @@
-representation,num_clusters,silhouette,calinski_harabasz,davies_bouldin,ari,nmi,purity,clusterer,model,modality,device,amp
-latent,4.0,0.4539547860622406,816.881052603728,0.6714814610856145,0.04414093907458555,0.0640047199550991,0.37,kmeans,conv_vae,audio,cuda,True
-pca_kmeans,4.0,0.17028461396694183,169.93680851670533,1.7606594196587502,0.09525825376739906,0.13831091734879317,0.4275,kmeans,pca,audio,cpu,False

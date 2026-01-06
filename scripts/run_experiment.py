@@ -81,6 +81,11 @@ def main() -> None:
     from src.models import ConvVAE, MLPAutoEncoder, MLPVAE
 
     p = argparse.ArgumentParser(description="VAE/Beta-VAE clustering for audio+lyrics datasets")
+    p.add_argument(
+        "--out_dir",
+        default="",
+        help="If set, write outputs to this directory instead of creating a timestamped folder under results/.",
+    )
     p.add_argument("--modality", choices=["lyrics", "audio", "multimodal"], default="lyrics")
     p.add_argument("--model", choices=["vae", "beta_vae", "ae", "conv_vae"], default="vae")
     p.add_argument("--audio_kind", choices=["mfcc", "mel"], default="mfcc")
@@ -118,8 +123,11 @@ def main() -> None:
     ensure_dir(paths.cache_dir)
     ensure_dir(paths.results_dir)
 
-    tag = now_tag()
-    out_dir = ensure_dir(paths.results_dir / f"{tag}_{args.modality}_{args.model}_{args.clusterer}")
+    if args.out_dir:
+        out_dir = ensure_dir(Path(args.out_dir))
+    else:
+        tag = now_tag()
+        out_dir = ensure_dir(paths.results_dir / f"{tag}_{args.modality}_{args.model}_{args.clusterer}")
 
     # -------------------- Load data + features --------------------
     y_true: np.ndarray | None = None

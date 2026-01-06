@@ -41,6 +41,19 @@ If you don’t have an NVIDIA GPU, PyTorch will fall back to CPU automatically.
 
 All runs save outputs under `results/` (metrics CSV + plots + config JSON).
 
+### Task entrypoints (easy / medium / hard)
+
+These scripts run the guideline tasks directly:
+
+- Easy: `python scripts/easy_task.py --device auto`
+- Medium: `python scripts/medium_task.py --device auto`
+- Hard: `python scripts/hard_task.py --device auto`
+
+They overwrite a single canonical output folder each:
+- `results/easy/` (e.g., `metrics_easy.csv`, `vae_tsne.png`, `pca_tsne.png`)
+- `results/medium/` (e.g., `metrics_medium.csv`, `vae_kmeans_tsne.png`, `vae_agglomerative_tsne.png`, `vae_dbscan_tsne.png`)
+- `results/hard/` (e.g., `metrics_hard.csv`, `beta_vae_tsne.png`)
+
 ### Easy task (lyrics: English vs Bangla)
 
 VAE latent → KMeans(2) + baseline PCA+KMeans:

@@ -1,0 +1,7 @@
+run,representation,num_clusters,silhouette,calinski_harabasz,davies_bouldin,ari,nmi,purity,clusterer,model,modality,device,amp
+kmeans,latent,1.0,,,,1.0,1.0,1.0,kmeans,vae,audio,cuda,True
+kmeans,pca_kmeans,1.0,,,,1.0,1.0,1.0,kmeans,pca,audio,cpu,False
+agglo,latent,1.0,,,,1.0,1.0,1.0,agglo,vae,audio,cuda,True
+agglo,pca_kmeans,1.0,,,,1.0,1.0,1.0,kmeans,pca,audio,cpu,False
+dbscan,latent,1.0,,,,1.0,1.0,1.0,dbscan,vae,audio,cuda,True
+dbscan,pca_kmeans,1.0,,,,1.0,1.0,1.0,kmeans,pca,audio,cpu,False
